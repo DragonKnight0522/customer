@@ -7,9 +7,9 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 
 const Chatty = () => {
   return (
-    <div className="fixed left-8 bottom-8 group">
-      <div className="absolute flex group-focus-within:-mt-48 w-14 h-14 bg-black rounded-full group-focus-within:opacity-0 z-30" title='Instagram'>
-        <a href={'https://www.instagram.com/'} className="m-auto">
+    <div className="fixed left-8 bottom-8 group z-50">
+      <div className="absolute flex group-focus-within:-mt-48 w-14 h-14 bg-black border-black border-2 rounded-full group-focus-within:opacity-0 z-30" style={{boxSizing: "content-box", marginLeft: "-2px", marginTop: "-2px"}}>
+        <a href={'#'} className="m-auto">
           <FontAwesomeIcon icon={faMessage} color="white" className="m-auto" size="2x" />
         </a>
       </div>
@@ -24,8 +24,12 @@ const Chatty = () => {
         </a>
       </div>
       <div className="flex w-14 h-14 bg-black rounded-full">
-        <FontAwesomeIcon icon={faMessage} color="white" className="m-auto group-focus-within:hidden transition-all" size="2x" />
-        <FontAwesomeIcon icon={faTimes} color="white" className="m-auto" size="2x" />
+        <span className="m-auto group-focus-within:hidden transition-all">
+          <FontAwesomeIcon icon={faMessage} color="white" size="2x" />
+        </span>
+        <span className="m-auto hidden group-focus-within:inline-block transition-all">
+          <FontAwesomeIcon icon={faTimes} color="white" size="2x" />
+        </span>
       </div>
     </div>
   )

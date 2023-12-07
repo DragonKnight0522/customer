@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from "next/link";
 import Slider from './components/Home/Slider';
 import Product from './components/common/Product';
+import FeedBack from './components/common/FeedBack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
-import FeedBack from './components/common/FeedBack';
 
 export default function Home() {
   return (

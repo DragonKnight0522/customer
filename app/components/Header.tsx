@@ -21,8 +21,11 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import Chatty from "./common/Chatty";
+import { usePathname } from 'next/navigation';
+import classNames from "classnames";
 
 const Header = () => {
+  const pathName = usePathname();
   const [isSearch, setSearch] = React.useState(false);
   const [openPopover, setOpenPopover] = React.useState(false);
  
@@ -34,7 +37,7 @@ const Header = () => {
   return (
     <div className="bg-black">
       <div className="container row">
-        <div className="flex justify-between items-center text-white pt-1">
+        <div className="flex md:justify-between justify-center items-center text-white pt-1">
           <div className="flex items-baseline">
             <div className="flex">
               <FontAwesomeIcon icon={faPhone} size="sm" className="py-1 me-1" />
@@ -46,12 +49,14 @@ const Header = () => {
                 <span className="text-sm">info@ghostcarts.com</span>
               </div>
             </a>
-            <FontAwesomeIcon icon={faFacebookF} className="py-1 ms-4" />
-            <FontAwesomeIcon icon={faTwitter} className="py-1 ms-4" />
-            <FontAwesomeIcon icon={faInstagram} className="py-1 ms-4" fontWeight={"bold"} />
-            <FontAwesomeIcon icon={faFeed} className="py-1 ms-4" />
+            <div className="hidden md:block">
+              <FontAwesomeIcon icon={faFacebookF} className="py-1 ms-4" />
+              <FontAwesomeIcon icon={faTwitter} className="py-1 ms-4" />
+              <FontAwesomeIcon icon={faInstagram} className="py-1 ms-4" fontWeight={"bold"} />
+              <FontAwesomeIcon icon={faFeed} className="py-1 ms-4" />
+            </div>
           </div>
-          <div>
+          <div className="hidden lg:block">
             <FontAwesomeIcon icon={faShoppingCart} size="xs" />
             <span className="text-sm ms-2">0 Items</span>
           </div>
@@ -65,40 +70,40 @@ const Header = () => {
           {!isSearch ? 
             <div className="flex">
               <div className="lg:flex hidden">
-                <div className="me-6 hover:text-gray-300">
+                <div className={classNames("me-6 hover:text-gray-300", {"text-green-500": pathName === "/"})}>
                   <Link href={"/"}>HOME</Link>
                 </div>
                 <div className="me-6">
                   <Popover open={openPopover} handler={setOpenPopover} placement="bottom-start">
                     <PopoverHandler {...triggers}>
-                      <Link href={"/shop"} className="outline-none hover:text-gray-300">
+                      <Link href={"/shop"} className={classNames("outline-none hover:text-gray-300", {"text-green-500": pathName.startsWith("/shop") || pathName.startsWith("/product-category")})}>
                         SHOP
                         <FontAwesomeIcon className="ms-1" icon={faAngleDown} />
                       </Link>
                     </PopoverHandler>
                     <PopoverContent {...triggers} className="bg-black text-white border-t-white border-t-2 mt-7 ps-9 pe-16 py-7">
                       <div className="mb-5">
-                        <Link href={"/ghost-carts"} className="outline-none hover:text-gray-300">GHOST CARTS</Link>
+                        <Link href={"/product-category/ghost-carts"} className={classNames("outline-none hover:text-gray-300", {"text-green-500": pathName.startsWith("/product-category/ghost-carts")})}>GHOST CARTS</Link>
                       </div>
                       <div className="mb-5">
-                        <Link href={"/ghost-extracts"} className="outline-none hover:text-gray-300">GHOST EXTRACTS</Link>
+                        <Link href={"/product-category/ghost-extracts"} className={classNames("outline-none hover:text-gray-300", {"text-green-500": pathName.startsWith("/product-category/ghost-extracts")})}>GHOST EXTRACTS</Link>
                       </div>
                       <div>
-                        <Link href={"/torch-x-ghost"} className="outline-none hover:text-gray-300">TORCH X GHOST</Link>
+                        <Link href={"/product-category/torch-x-ghost"} className={classNames("outline-none hover:text-gray-300", {"text-green-5000": pathName.startsWith("/product-category/torch-x-ghost")})}>TORCH X GHOST</Link>
                       </div>
                     </PopoverContent>
                   </Popover>
                 </div>
-                <div className="me-6 hover:text-gray-300">
+                <div className={classNames("me-6 hover:text-gray-300", {"text-green-500": pathName.startsWith("/about-us")})}>
                   <Link href={"/about-us"}>ABOUT US</Link>
                 </div>
-                <div className="me-6 hover:text-gray-300">
+                <div className={classNames("me-6 hover:text-gray-300", {"text-green-500": pathName.startsWith("/wholesale")})}>
                   <Link href={"/wholesale"}>WHOLESALE</Link>
                 </div>
-                <div className="me-6 hover:text-gray-300">
+                <div className={classNames("me-6 hover:text-gray-300", {"text-green-500": pathName.startsWith("/my-account")})}>
                   <Link href={"/my-account"}>MY ACCOUNT</Link>
                 </div>
-                <div className="me-6 hover:text-gray-300">
+                <div className={classNames("me-6 hover:text-gray-300", {"text-green-500": pathName.startsWith("/validate-product")})}>
                   <Link href={"/validate-product"}>VALIDATE PRODUCT</Link>
                 </div>
               </div>
@@ -120,13 +125,13 @@ const Header = () => {
                       <Link href={"/shop"} className="outline-none hover:text-gray-300">Shop</Link>
                     </div>
                     <div className="mb-5 ms-8">
-                      <Link href={"/ghost-carts"} className="outline-none hover:text-gray-300">Ghost Carts</Link>
+                      <Link href={"/product-category/ghost-carts"} className="outline-none hover:text-gray-300">Ghost Carts</Link>
                     </div>
                     <div className="mb-5 ms-8">
-                      <Link href={"/ghost-extracts"} className="outline-none hover:text-gray-300">Ghost Extracts</Link>
+                      <Link href={"/product-category/ghost-extracts"} className="outline-none hover:text-gray-300">Ghost Extracts</Link>
                     </div>
                     <div className="mb-5 ms-8">
-                      <Link href={"/torch-x-ghost"} className="outline-none hover:text-gray-300">Torch x Ghost</Link>
+                      <Link href={"/product-category/torch-x-ghost"} className="outline-none hover:text-gray-300">Torch x Ghost</Link>
                     </div>
                     <div className="mb-5">
                       <Link href={"/about-us"} className="outline-none hover:text-gray-300">About Us</Link>

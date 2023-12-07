@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="bg-black">
       <div className="row pt-14">
-        <div className="grid lg:grid-cols-3 grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
           <div>
             <h4 className="text-red-600 text-lg mb-3">GHOST CONTACT</h4>
             <p className="text-white uppercase italic mb-5 font-bold">
