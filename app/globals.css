@@ -48,3 +48,7 @@
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid lightgrey;
 }
+
+.instagramBg {
+    background: linear-gradient(to top right, yellow, orange, purple, blue);
+}

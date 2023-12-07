@@ -17,7 +17,7 @@ const Product = (
     <div className="productItem">
       <div className="absolute mt-2 ms-2 bg-orange-400 inline-block px-5 text-xl py-2 rounded-md font-bold text-white z-10">Sale!</div>
       <div className="relative">
-        <div className="absolute w-full flex h-full justify-center items-center productMask">
+        <div className="absolute w-full flex h-full justify-center items-center z-20 productMask">
           <FontAwesomeIcon icon={faCirclePlus} size="2x" className="text-cyan-500" />
         </div>
         <Image width={300} height={300} src={thumb} alt='' />

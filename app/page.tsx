@@ -2,6 +2,9 @@ import Image from 'next/image';
 import Link from "next/link";
 import Slider from './components/Home/Slider';
 import Product from './components/common/Product';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
+import FeedBack from './components/common/FeedBack';
 
 export default function Home() {
   return (
@@ -9,8 +12,8 @@ export default function Home() {
       <Slider />
       <div className="row pb-16">
         <h2 className="text-center text-3xl font-semibold mt-6 mb-10">WELCOME TO GHOST CARTS STORE</h2>
-        <div className="grid grid-cols-4 gap-8">
-          {new Array(12).fill(1).map((x, idx) => <Product key={`product_${idx}`} thumb={"/images/California-Ghost-eCommerce-Shots-Individual-Front-Facing-with-Device-0009_r-1.png"} />)}
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-8">
+          {new Array(12).fill(1).map((x, idx) => <Product key={`product_${idx}`} thumb={"/images/Mockup_Product.webp"} />)}
         </div>
       </div>
       <div className="bg-slate-200">
@@ -30,21 +33,21 @@ export default function Home() {
           <h2 className="text-center font-bold" style={{fontSize: '53px'}}>QUALITY CANNABIS PRODUCTS.</h2>
           <p>&nbsp;</p>
           <p className="text-center text-lg font-semibold">we keep the process that we use for our ghost extracts cannabis products simple.</p>
-          <div className="grid grid-cols-3 gap-5 mt-7">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-7">
             <div>
-              <div className="p-6">
+              <div className="p-6 lg:w-full w-4/5 m-auto">
                 <Image className="w-full h-auto" src={"/images/ghost-extraction.webp"} width={320} height={320} alt='' />
               </div>
               <p className="text-xl text-center font-bold">PREMIUM CANNABIS</p>
             </div>
             <div>
-              <div className="p-6">
+              <div className="p-6 lg:w-full w-4/5 m-auto">
                 <Image className="w-full h-auto" src={"/images/ghost-third-party-testing.webp"} width={320} height={320} alt='' />
               </div>
               <p className="text-xl text-center font-bold">3RD PARTY TESTED</p>
             </div>
             <div>
-              <div className="p-6">
+              <div className="p-6 lg:w-full w-4/5 m-auto">
                 <Image className="w-full h-auto" src={"/images/ghost-quality-control.webp"} width={320} height={320} alt='' />
               </div>
               <p className="text-xl text-center font-bold">QUALITY CONTROL CHECKED</p>
@@ -53,8 +56,8 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-black">
-        <div className="row -mx-10 scale-105">
-          <div className="grid grid-cols-2 gap-x-16">
+        <div className="row lg:scale-105">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-16">
             <div className="py-6">
               <Image className="w-full h-auto rounded-3xl shadow-gray-200" src={"/images/photo_2023-11-08_08-08-20.webp"} style={{boxShadow: "0px 2px 18px 0px #FFFFFF"}} width={500} height={800} alt='' />
             </div>
@@ -68,7 +71,7 @@ export default function Home() {
         </div>
       </div>
       <div className="row">
-        <div className="grid grid-cols-2 gap-x-16">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-16">
           <div className="font-semibold">
             <h2 className="text-3xl mt-16 mb-3">GHOST CART DISPOSABLES BULK BUY NOW</h2>
             <p className="text-lg mb-4">If you’re looking to stock up on Ghost Cart disposables in bulk, you’ve come to the right place. Buying in bulk can save you money and ensure that you always have plenty of disposables on hand when you need them.</p>
@@ -82,15 +85,34 @@ export default function Home() {
       </div>
       <div className="row">
         <h2 className="text-3xl text-center font-semibold py-10 mb-3">GHOST CART DISPOSABLES BULK BUY NOW</h2>
-        <div className="grid grid-cols-4 gap-8 pb-16">
-          {new Array(8).fill(1).map((x, idx) => <Product key={`product_${idx}`} thumb={"/images/Northern-lights-GhostCarts-Flavor-.webp"} />)}
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 pb-16">
+          {new Array(8).fill(1).map((x, idx) => <Product key={`product_${idx}`} thumb={"/images/Mockup_Product.webp"} />)}
         </div>
       </div>
       <div className="row">
         <h2 className="text-3xl text-center font-semibold">TORCH X GHOST</h2>
         <h2 className="text-2xl text-center font-semibold mb-10">LATEST COLLECTION AND BEST SELLING</h2>
-        <div className="grid grid-cols-4 gap-8 pb-16">
-          {new Array(8).fill(1).map((x, idx) => <Product key={`product_${idx}`} thumb={"/images/Rainbowgushers.webp"} />)}
+        <div className="grid g:grid-cols-4 grid-cols-2 gap-8 pb-16">
+          {new Array(8).fill(1).map((x, idx) => <Product key={`product_${idx}`} thumb={"/images/Mockup_Product.webp"} />)}
+        </div>
+        <div className="text-center">
+          <Link href={'/'}>
+            <div className="inline-block group border-black border-4 py-2 px-5 rounded-full transition-all hover:px-4 mb-10" style={{boxShadow: "0px 2px 18px 0px #000000"}}>
+              <span className="font-semibold text-xl">All Torch x Ghost</span>
+              <FontAwesomeIcon icon={faAngleRight} className="-ms-2 opacity-0 transition-all group-hover:ms-2 group-hover:opacity-100" />
+            </div>
+          </Link>
+          <h2 className="text-3xl font-semibold mb-6">GHOSTCARTS.COM CLIENT REVIEWS </h2>
+        </div>
+      </div>
+      <div className="row py-8">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-14">
+          <FeedBack />
+          <FeedBack />
+          <FeedBack />
+          <FeedBack />
+          <FeedBack />
+          <FeedBack />
         </div>
       </div>
     </div>

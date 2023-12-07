@@ -19,6 +19,8 @@ import {
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons/faAngleDown";
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import Chatty from "./common/Chatty";
 
 const Header = () => {
   const [isSearch, setSearch] = React.useState(false);
@@ -55,51 +57,91 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="px-7 py-3 flex justify-between items-center">
+      <div className="lg:px-7 py-3 flex justify-between items-center w-4/5 mx-auto lg:w-full px-0">
         <Link href={"/"}>
-          <Image src={'/images/ghost-logo-2.png'} alt='logo' width={180} height={50} />
+          <Image src={'/images/Lenos_Logo_Mockup_Logo_PNG.webp'} alt='logo' width={80} height={50} />
         </Link>
         <div className="text-white flex items-center">
           {!isSearch ? 
             <div className="flex">
-              <div className="me-6 hover:text-gray-300">
-                <Link href={"/"}>HOME</Link>
+              <div className="lg:flex hidden">
+                <div className="me-6 hover:text-gray-300">
+                  <Link href={"/"}>HOME</Link>
+                </div>
+                <div className="me-6">
+                  <Popover open={openPopover} handler={setOpenPopover} placement="bottom-start">
+                    <PopoverHandler {...triggers}>
+                      <Link href={"/shop"} className="outline-none hover:text-gray-300">
+                        SHOP
+                        <FontAwesomeIcon className="ms-1" icon={faAngleDown} />
+                      </Link>
+                    </PopoverHandler>
+                    <PopoverContent {...triggers} className="bg-black text-white border-t-white border-t-2 mt-7 ps-9 pe-16 py-7">
+                      <div className="mb-5">
+                        <Link href={"/ghost-carts"} className="outline-none hover:text-gray-300">GHOST CARTS</Link>
+                      </div>
+                      <div className="mb-5">
+                        <Link href={"/ghost-extracts"} className="outline-none hover:text-gray-300">GHOST EXTRACTS</Link>
+                      </div>
+                      <div>
+                        <Link href={"/torch-x-ghost"} className="outline-none hover:text-gray-300">TORCH X GHOST</Link>
+                      </div>
+                    </PopoverContent>
+                  </Popover>
+                </div>
+                <div className="me-6 hover:text-gray-300">
+                  <Link href={"/about-us"}>ABOUT US</Link>
+                </div>
+                <div className="me-6 hover:text-gray-300">
+                  <Link href={"/wholesale"}>WHOLESALE</Link>
+                </div>
+                <div className="me-6 hover:text-gray-300">
+                  <Link href={"/my-account"}>MY ACCOUNT</Link>
+                </div>
+                <div className="me-6 hover:text-gray-300">
+                  <Link href={"/validate-product"}>VALIDATE PRODUCT</Link>
+                </div>
               </div>
-              <div className="me-6">
-                <Popover open={openPopover} handler={setOpenPopover} placement="bottom-start">
-                  <PopoverHandler {...triggers}>
-                    <Link href={"/shop"} className="outline-none hover:text-gray-300">
-                      SHOP
-                      <FontAwesomeIcon className="ms-1" icon={faAngleDown} />
-                    </Link>
+              <div className="flex align-middle">
+                <div className="hover:text-gray-300">
+                  <FontAwesomeIcon icon={faSearch} className="cursor-pointer" onClick={() => setSearch(true)} />
+                </div>
+                <Popover placement="bottom-end">
+                  <PopoverHandler>
+                    <div className="text-cyan-500 ms-5 lg:hidden">
+                      <FontAwesomeIcon className="ms-1 cursor-pointer" icon={faBars} size="lg" />
+                    </div>
                   </PopoverHandler>
-                  <PopoverContent {...triggers} className="bg-black text-white border-t-white border-t-2 mt-7 ps-9 pe-16 py-7">
+                  <PopoverContent className="bg-black text-white border-t-cyan-500 w-4/5 border-t-2 mt-7 py-12 px-16">
                     <div className="mb-5">
-                      <Link href={"/ghost-carts"} className="outline-none hover:text-gray-300">GHOST CARTS</Link>
+                      <Link href={"/"} className="outline-none hover:text-gray-300">Home</Link>
                     </div>
                     <div className="mb-5">
-                      <Link href={"/ghost-extracts"} className="outline-none hover:text-gray-300">GHOST EXTRACTS</Link>
+                      <Link href={"/shop"} className="outline-none hover:text-gray-300">Shop</Link>
+                    </div>
+                    <div className="mb-5 ms-8">
+                      <Link href={"/ghost-carts"} className="outline-none hover:text-gray-300">Ghost Carts</Link>
+                    </div>
+                    <div className="mb-5 ms-8">
+                      <Link href={"/ghost-extracts"} className="outline-none hover:text-gray-300">Ghost Extracts</Link>
+                    </div>
+                    <div className="mb-5 ms-8">
+                      <Link href={"/torch-x-ghost"} className="outline-none hover:text-gray-300">Torch x Ghost</Link>
+                    </div>
+                    <div className="mb-5">
+                      <Link href={"/about-us"} className="outline-none hover:text-gray-300">About Us</Link>
+                    </div>
+                    <div className="mb-5">
+                      <Link href={"/whole-sale"} className="outline-none hover:text-gray-300">Wholesale</Link>
+                    </div>
+                    <div className="mb-5">
+                      <Link href={"/my-account"} className="outline-none hover:text-gray-300">My Account</Link>
                     </div>
                     <div>
-                      <Link href={"/torch-x-ghost"} className="outline-none hover:text-gray-300">TORCH X GHOST</Link>
+                      <Link href={"/validate-account"} className="outline-none hover:text-gray-300">Validate Account</Link>
                     </div>
                   </PopoverContent>
                 </Popover>
-              </div>
-              <div className="me-6 hover:text-gray-300">
-                <Link href={"/about-us"}>ABOUT US</Link>
-              </div>
-              <div className="me-6 hover:text-gray-300">
-                <Link href={"/wholesale"}>WHOLESALE</Link>
-              </div>
-              <div className="me-6 hover:text-gray-300">
-                <Link href={"/my-account"}>MY ACCOUNT</Link>
-              </div>
-              <div className="me-6 hover:text-gray-300">
-                <Link href={"/validate-product"}>VALIDATE PRODUCT</Link>
-              </div>
-              <div className="hover:text-gray-300">
-                <FontAwesomeIcon icon={faSearch} className="cursor-pointer" onClick={() => setSearch(true)} />
               </div>
             </div>
             :
@@ -111,6 +153,7 @@ const Header = () => {
             </div>}
         </div>
       </div>
+      <Chatty />
     </div>
   );
 }
