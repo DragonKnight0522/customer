@@ -65,7 +65,7 @@ const Footer = () => {
             <Image src={"/images/11.webp"} width={300} height={169} alt='' />
           </div>
         </div>
-        <h2 className="text-red-600 uppercase italic mb-5 font-bold pb-6 pt-16">{`© ${new Date().getFullYear()} Ghost Carts Brand. All Rights Reserved`}</h2>
+        <h2 className="text-red-600 uppercase italic font-bold pb-6 pt-16">{`© ${new Date().getFullYear()} Ghost Carts Brand. All Rights Reserved`}</h2>
       </div>
     </div>
   );

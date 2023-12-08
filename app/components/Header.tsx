@@ -81,7 +81,7 @@ const Header = () => {
                         <FontAwesomeIcon className="ms-1" icon={faAngleDown} />
                       </Link>
                     </PopoverHandler>
-                    <PopoverContent {...triggers} className="bg-black text-white border-t-white border-t-2 mt-7 ps-9 pe-16 py-7">
+                    <PopoverContent {...triggers} className="bg-black text-white border-t-white border-t-2 mt-7 ps-9 pe-16 py-7 rounded-none border-l-0 border-b-0 border-r-0">
                       <div className="mb-5">
                         <Link href={"/product-category/ghost-carts"} className={classNames("outline-none hover:text-gray-300", {"text-green-500": pathName.startsWith("/product-category/ghost-carts")})}>GHOST CARTS</Link>
                       </div>
@@ -117,7 +117,7 @@ const Header = () => {
                       <FontAwesomeIcon className="ms-1 cursor-pointer" icon={faBars} size="lg" />
                     </div>
                   </PopoverHandler>
-                  <PopoverContent className="bg-black text-white border-t-cyan-500 w-4/5 border-t-2 mt-7 py-12 px-16">
+                  <PopoverContent className="bg-black text-white border-t-cyan-500 w-4/5 border-t-2 mt-7 py-12 px-16 rounded-none border-l-0 border-b-0 border-r-0">
                     <div className="mb-5">
                       <Link href={"/"} className="outline-none hover:text-gray-300">Home</Link>
                     </div>

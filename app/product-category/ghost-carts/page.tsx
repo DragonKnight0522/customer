@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import Product2 from '@/app/components/common/Product2';
 import Link from "next/link";
@@ -8,16 +7,16 @@ import Pagination from '@/app/components/common/Pagination';
 
 const GhostCarts = () => {
   return (
-    <div className="row flex">
+    <div className="row lg:flex block">
       <div className="lg:w-4/5 w-full lg:pe-16 pt-14 pb-8">
         <div className="font-semibold flex align-middle">
           <Link href={"/"} className="text-green-500">Home</Link>
           <span className="mx-1">
             <FontAwesomeIcon icon={faAngleDoubleRight} size="xs" />
           </span>
-          <Link href={"/product-category/ghost-carts"}>Ghost Carts</Link>
+          <span>Ghost Carts</span>
         </div>
-        <h1 className="text-3xl font-semibold">GHOST CARTS</h1>
+        <h1 className="text-3xl font-bold">GHOST CARTS</h1>
         <div className="flex justify-between my-5">
           <p className="text-sm text-gray-500">Showing 1-9 of 32 results</p>
           <select className="outline-none bg-gray-200 text-gray-600 py-1 ps-2 pe-1 text-sm rounded-md">

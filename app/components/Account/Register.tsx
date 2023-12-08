@@ -11,7 +11,7 @@ const Register = () => {
       <h2 className="text-3xl font-semibold mb-8">REGISTER</h2>
       <div className="border-gray-300 px-6 pt-10 pb-6 rounded-md" style={{borderWidth: '1px'}}>
         <div className="mb-2">
-          <Input variant="static" label="Email address" crossOrigin={undefined} />
+          <Input variant="static" label="Email address *" crossOrigin={undefined} />
         </div>
         <p className="mb-4 font-semibold">A link to set a new password will be sent to your email address.</p>
         <p className="mb-1 font-semibold">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <Link href={"/privacy-policy"} className="text-green-700">privacy policy</Link>.</p>
