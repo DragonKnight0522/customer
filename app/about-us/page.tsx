@@ -4,9 +4,9 @@ import Image from "next/image";
 const page = () => {
   return (
     <div>
-      <div className="text-center" style={{backgroundImage: `url("/images/C16CBFD5-2262-4938-8179-06A5C5FF27BA.jpeg")`, backgroundPosition: '50%', backgroundSize: 'cover', height: '300px'}}>
-        <div className="px-64 py-8 bg-black bg-opacity-30 inline-block mt-28 rounded-3xl">
-          <h2 className="text-5xl text-white font-semibold">ABOUT GHOST. STORE</h2>
+      <div className="text-center pt-28" style={{backgroundImage: `url("/images/C16CBFD5-2262-4938-8179-06A5C5FF27BA.jpeg")`, backgroundPosition: '50%', backgroundSize: 'cover', height: '300px'}}>
+        <div className="row py-8 bg-black bg-opacity-30 inline-block rounded-3xl">
+          <h2 className="lg:text-5xl md:text-3xl text-2xl text-white font-semibold">ABOUT GHOST. STORE</h2>
         </div>
       </div>
       <div className="row">
@@ -14,7 +14,7 @@ const page = () => {
           <div>
             <h2 className="text-2xl text-center px-20 font-bold mb-2">WHAT MAKES GHOST CARTS UNIQUE</h2>
             <div className="border-double border-gray-800 overflow-hidden" style={{borderRadius: '70px', borderWidth: '10px'}}>
-              <Image src={"/images/0E9495D1-95DA-4067-BB3F-022F2FDB3898.jpeg"} width={500} height={500} alt='' />
+              <Image className="w-full" src={"/images/0E9495D1-95DA-4067-BB3F-022F2FDB3898.jpeg"} width={800} height={500} alt='' />
             </div>
           </div>
           <div>
