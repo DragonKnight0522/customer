@@ -22,41 +22,53 @@ const Footer = () => {
           <div>
             <h4 className="text-red-600 text-lg mb-3">INFORMATION</h4>
             <ul>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
                 <Link href={"/about-us"} className="uppercase text-white italic font-bold">About US</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
                 <Link href={"/cart"} className="uppercase text-white italic font-bold">Cart</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
                 <Link href={"/checkout"} className="uppercase text-white italic font-bold">Checkout</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
                 <Link href={"/"} className="uppercase text-white italic font-bold">Home</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
+                <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
+                <Link href={"/my-account"} className="uppercase text-white italic font-bold">My Account</Link>
+              </li>
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
                 <Link href={"/privacy-policy"} className="uppercase text-white italic font-bold">Privacy Policy</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
-                <Link href={"/shop"} className="uppercase text-white italic font-bold">Teams of Service</Link>
+                <Link href={"/shipping-delivery"} className="uppercase text-white italic font-bold">Shipping & Delivery</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
-                <Link href={"/teams-of-service"} className="uppercase text-white italic font-bold">Shop</Link>
+                <Link href={"/shop"} className="uppercase text-white italic font-bold">Shop</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
+                <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
+                <Link href={"/terms-of-service"} className="uppercase text-white italic font-bold">Terms of Service</Link>
+              </li>
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
                 <Link href={"/track-order"} className="uppercase text-white italic font-bold">Track your order</Link>
               </li>
-              <li className="mb-5 flex items-center">
+              <li className="mb-3 flex items-center">
                 <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
                 <Link href={"/validate-product"} className="uppercase text-white italic font-bold">Validate product</Link>
+              </li>
+              <li className="mb-3 flex items-center">
+                <span className="inline-block w-2 h-2 me-2 rounded-full bg-cyan-300"></span>
+                <Link href={"/wholesale"} className="uppercase text-white italic font-bold">Wholesale</Link>
               </li>
             </ul>
           </div>
