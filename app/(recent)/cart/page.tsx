@@ -80,10 +80,10 @@ const page = () => {
               </tr>
             </tbody>
           </table>
-          <button className="group block w-full hover:border-transparent border-2 border-black rounded-full hover:bg-gray-100 py-2 px-5 transition-all hover:px-4 my-3">
+          <Link href={"/checkout"} className="group text-center block w-full hover:border-transparent border-2 border-black rounded-full hover:bg-gray-100 py-2 px-5 transition-all hover:px-4 my-3">
             <span className="font-semibold text-xl">Proceed to checkout</span>
             <FontAwesomeIcon icon={faAngleRight} className="-ms-2 opacity-0 transition-all group-hover:ms-2 group-hover:opacity-100" />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

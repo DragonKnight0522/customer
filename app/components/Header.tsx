@@ -56,10 +56,10 @@ const Header = () => {
               <FontAwesomeIcon icon={faFeed} className="py-1 ms-4" />
             </div>
           </div>
-          <div className="hidden lg:block">
+          <Link href={"/cart"} className="hidden lg:block">
             <FontAwesomeIcon icon={faShoppingCart} size="xs" />
             <span className="text-sm ms-2">0 Items</span>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="lg:px-7 py-3 flex justify-between items-center w-4/5 mx-auto lg:w-full px-0">
