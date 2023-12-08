@@ -52,3 +52,22 @@
 .instagramBg {
     background: linear-gradient(to top right, yellow, orange, purple, blue);
 }
+
+.cart-table tbody td::before {
+    content: attr(data-title);
+    font-weight: 700;
+    float: left;
+}
+
+.payment::before {
+    content: "";
+    display: block;
+    border: 1em solid #e0e0e0;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    margin: -1em 0 0 2em;
+}

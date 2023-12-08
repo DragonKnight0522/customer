@@ -1,5 +1,4 @@
 import React from 'react';
-import PageList from '@/app/components/Account/PageList';
 import Link from "next/link";
 
 const Address = () => {

@@ -35,7 +35,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-black fixed w-full z-50">
       <div className="container row">
         <div className="flex md:justify-between justify-center items-center text-white pt-1">
           <div className="flex items-baseline">
