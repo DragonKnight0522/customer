@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const GhostExtracts = () => {
-  const playAnimation = () => {
+  const playAnimation = (trigger: ScrollTrigger) => {
     gsap.fromTo('#ghostCart', {
       rotationY: '60',
       opacity: 0,
@@ -18,16 +18,19 @@ const GhostExtracts = () => {
       opacity: 1,
       duration: 2,
       ease: 'power2.out',
+      onComplete: () => {
+        trigger.kill();
+      }
     });
   }
 
   React.useEffect(() => {
     const element = document.getElementById('ghostCart');
 
-    ScrollTrigger.create({
+    const scrollTrigger = ScrollTrigger.create({
       trigger: element,
       start: 'top 80%',
-      onEnter: () => playAnimation(),
+      onEnter: () => playAnimation(scrollTrigger),
     })
   }, []);
 

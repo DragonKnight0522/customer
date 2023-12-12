@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Welcome = () => {
-  const playAnimation = () => {
+  const playAnimation = (trigger: ScrollTrigger) => {
     gsap.fromTo('#cartStore', {
       rotation: '-180',
       opacity: 0,
@@ -18,17 +18,20 @@ const Welcome = () => {
       opacity: 1,
       duration: 2,
       ease: 'power2.out',
+      onComplete: () => {
+        trigger.kill();
+      }
     });
   }
 
   React.useEffect(() => {
     const element = document.getElementById('cartStore');
 
-    ScrollTrigger.create({
+    const scrollTrigger = ScrollTrigger.create({
       trigger: element,
       start: 'top 80%',
-      onEnter: () => playAnimation(),
-    })
+      onEnter: () => playAnimation(scrollTrigger),
+    });
   }, []);
 
   return (

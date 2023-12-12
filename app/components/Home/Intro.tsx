@@ -6,25 +6,28 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Intro = () => {
-  const playAnimation = () => {
+  const playAnimation = (trigger: ScrollTrigger) => {
     gsap.fromTo('#introduction', {
       opacity: 0,
-      duration: 2,
+      duration: 3,
       ease: 'power2.out',
     }, {
       opacity: 1,
-      duration: 2,
+      duration: 3,
       ease: 'power2.out',
+      onComplete: () => {
+        trigger.kill();
+      }
     });
   }
 
   React.useEffect(() => {
     const element = document.getElementById('introduction');
 
-    ScrollTrigger.create({
+    const scrollTrigger = ScrollTrigger.create({
       trigger: element,
       start: 'top 80%',
-      onEnter: () => playAnimation(),
+      onEnter: () => playAnimation(scrollTrigger),
     })
   }, []);
 

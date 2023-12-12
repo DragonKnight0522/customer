@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Guide = () => {
-  const playAnimation = (element: Element) => {
+  const playAnimation = (element: Element, trigger: ScrollTrigger) => {
     gsap.fromTo(element, {
       scale: 0.3,
       duration: 2,
@@ -16,6 +16,9 @@ const Guide = () => {
       scale: 1,
       duration: 2,
       ease: 'power2.out',
+      onComplete: () => {
+        trigger.kill();
+      }
     });
   }
 
@@ -23,10 +26,10 @@ const Guide = () => {
     const elements = document.querySelectorAll("div[data-anim='guide']");
 
     elements.forEach(element => {
-      ScrollTrigger.create({
+      const scrollTrigger = ScrollTrigger.create({
         trigger: element,
         start: 'top 80%',
-        onEnter: () => playAnimation(element),
+        onEnter: () => playAnimation(element, scrollTrigger),
       });
     })
   }, []);

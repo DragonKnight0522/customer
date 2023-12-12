@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Quality = () => {
-  const playAnimation = () => {
+  const playAnimation = (trigger: ScrollTrigger) => {
     gsap.fromTo('#quality', {
       scale: 0.3,
       duration: 2,
@@ -16,16 +16,19 @@ const Quality = () => {
       scale: 1,
       duration: 2,
       ease: 'power2.out',
+      onComplete: () => {
+        trigger.kill();
+      }
     });
   }
 
   React.useEffect(() => {
     const element = document.getElementById('quality');
 
-    ScrollTrigger.create({
+    const scrollTrigger = ScrollTrigger.create({
       trigger: element,
       start: 'top 80%',
-      onEnter: () => playAnimation(),
+      onEnter: () => playAnimation(scrollTrigger),
     })
   }, []);
 

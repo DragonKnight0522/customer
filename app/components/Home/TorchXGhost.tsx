@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TorchXGhost = () => {
-  const playAnimation = () => {
+  const playAnimation = (trigger: ScrollTrigger) => {
     gsap.fromTo('#torchXghost', {
       rotation: '-180',
       opacity: 0,
@@ -21,16 +21,19 @@ const TorchXGhost = () => {
       opacity: 1,
       duration: 2,
       ease: 'power2.out',
+      onComplete: () => {
+        trigger.kill();
+      }
     });
   }
 
   React.useEffect(() => {
     const element = document.getElementById('torchXghost');
 
-    ScrollTrigger.create({
+    const scrollTrigger = ScrollTrigger.create({
       trigger: element,
       start: 'top 80%',
-      onEnter: () => playAnimation(),
+      onEnter: () => playAnimation(scrollTrigger),
     })
   }, []);
 
