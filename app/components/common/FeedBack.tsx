@@ -4,10 +4,10 @@ import { Avatar } from "@material-tailwind/react";
 
 const FeedBack = () => {
   return (
-    <div className="rounded-3xl flex lg:block" style={{boxShadow: "0px 2px 18px 0px #7CDA24"}}>
+    <div data-anim='feedback' className="rounded-3xl flex lg:block" style={{boxShadow: "0px 2px 18px 0px #7CDA24"}}>
       <div className="text-center py-8 feedBack">
         <div className="me-auto w-24 h-24 ms-8 lg:ms-auto">
-          <Avatar className="w-full h-full rounded-full" src={'/images/Francisco.jpeg'} alt='' size="xxl" style={{boxShadow: "inset 0 0 3px rgba(0,0,0,.3)"}} />
+          <Avatar className="w-full h-full rounded-full" src={'/images/Francisco.jpeg'} alt='' size="xxl" style={{boxShadow: "inset 0 0 3px rgba(0,0,0,.3)"}} placeholder={''} />
         </div>
       </div>
       <div className="px-8 lg:pt-0 pt-8">

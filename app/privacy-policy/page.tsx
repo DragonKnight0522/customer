@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="row py-20">
+    <div className="row pt-28 pb-20">
       <h2 className="text-3xl font-bold uppercase">PRIVACY POLICY FOR GHOSTCARTS.COM</h2>
       <h2 className="text-3xl font-semibold mb-4 uppercase">WHO WE ARE:</h2>
       <p className="font-semibold mb-4">Ghostcarts Store is an online e-commerce platform that provides a variety of products to its customers. Our website URL is www.ghostcarts.com, and our contact email is info@ghostcarts.com.</p>

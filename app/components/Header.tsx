@@ -23,6 +23,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import Chatty from "./common/Chatty";
 import { usePathname } from 'next/navigation';
 import classNames from "classnames";
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
   const pathName = usePathname();
@@ -34,8 +37,23 @@ const Header = () => {
     onMouseLeave: () => setOpenPopover(false),
   };
 
+  const handleScroll = () => {
+    gsap.to('#logo', {
+      height: window.scrollY > 0 ? 40 : 80,
+      width: window.scrollY > 0 ? 40 : 80,
+      duration: 0.5,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
-    <div className="bg-black fixed w-full z-50">
+    <div className="bg-black w-full fixed z-50">
       <div className="container row">
         <div className="flex md:justify-between justify-center items-center text-white pt-1">
           <div className="flex items-baseline">
@@ -64,7 +82,7 @@ const Header = () => {
       </div>
       <div className="lg:px-7 py-3 flex justify-between items-center w-4/5 mx-auto lg:w-full px-0">
         <Link href={"/"}>
-          <Image src={'/images/Lenos_Logo_Mockup_Logo_PNG.webp'} alt='logo' width={80} height={50} />
+          <Image id="logo" src={'/images/Lenos_Logo_Mockup_Logo_PNG.webp'} alt='logo' width={80} height={80} />
         </Link>
         <div className="text-white flex items-center">
           {!isSearch ? 
@@ -81,7 +99,7 @@ const Header = () => {
                         <FontAwesomeIcon className="ms-1" icon={faAngleDown} />
                       </Link>
                     </PopoverHandler>
-                    <PopoverContent {...triggers} className="bg-black text-white border-t-white border-t-2 mt-7 ps-9 pe-16 py-7 rounded-none border-l-0 border-b-0 border-r-0">
+                    <PopoverContent {...triggers} className="bg-black text-white border-t-white border-t-2 mt-7 ps-9 pe-16 py-7 rounded-none border-l-0 border-b-0 border-r-0" placeholder={''}>
                       <div className="mb-5">
                         <Link href={"/product-category/ghost-carts"} className={classNames("outline-none hover:text-gray-300", {"text-green-500": pathName.startsWith("/product-category/ghost-carts")})}>GHOST CARTS</Link>
                       </div>
@@ -117,7 +135,7 @@ const Header = () => {
                       <FontAwesomeIcon className="ms-1 cursor-pointer" icon={faBars} size="lg" />
                     </div>
                   </PopoverHandler>
-                  <PopoverContent className="bg-black text-white border-t-cyan-500 w-4/5 border-t-2 mt-7 py-12 px-16 rounded-none border-l-0 border-b-0 border-r-0">
+                  <PopoverContent className="bg-black text-white border-t-cyan-500 w-4/5 border-t-2 mt-7 py-12 px-16 rounded-none border-l-0 border-b-0 border-r-0" placeholder={''}>
                     <div className="mb-5">
                       <Link href={"/"} className="outline-none hover:text-gray-300">Home</Link>
                     </div>

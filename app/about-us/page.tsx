@@ -4,7 +4,7 @@ import Image from "next/image";
 const page = () => {
   return (
     <div>
-      <div className="text-center pt-28" style={{backgroundImage: `url("/images/C16CBFD5-2262-4938-8179-06A5C5FF27BA.jpeg")`, backgroundPosition: '50%', backgroundSize: 'cover', height: '300px'}}>
+      <div className="text-center pt-40" style={{backgroundImage: `url("/images/C16CBFD5-2262-4938-8179-06A5C5FF27BA.jpeg")`, backgroundPosition: '50%', backgroundSize: 'cover', height: '400px'}}>
         <div className="row py-8 bg-black bg-opacity-30 inline-block rounded-3xl">
           <h2 className="lg:text-5xl md:text-3xl text-2xl text-white font-semibold">ABOUT GHOST. STORE</h2>
         </div>

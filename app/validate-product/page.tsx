@@ -4,7 +4,7 @@ import ValidateProduct from '../components/ValidateProduct';
 
 const page = () => {
   return (
-    <div className="row py-20">
+    <div className="row pt-28 pb-20">
       <h2 className="text-3xl font-bold uppercase text-center mb-2">PRODUCT VALIDATION.</h2>
       <p className="text-center font-semibold">validate your ghost extracts product.</p>
       <div className="py-24">

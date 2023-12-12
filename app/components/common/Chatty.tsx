@@ -9,9 +9,9 @@ const Chatty = () => {
   return (
     <div className="fixed left-8 bottom-8 group z-50">
       <div className="absolute flex group-focus-within:-mt-48 w-14 h-14 bg-black border-black border-2 rounded-full group-focus-within:opacity-0 z-30" style={{boxSizing: "content-box", marginLeft: "-2px", marginTop: "-2px"}}>
-        <a href={'#'} className="m-auto">
+        <button className="m-auto">
           <FontAwesomeIcon icon={faMessage} color="white" className="m-auto" size="2x" />
-        </a>
+        </button>
       </div>
       <div className="absolute flex group-focus-within:-mt-32 w-14 h-14 rounded-full instagramBg transition-all z-20" title='Instagram'>
         <a href={'https://www.instagram.com/'} className="m-auto">

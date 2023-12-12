@@ -17,7 +17,7 @@ const Checkout = () => {
   const qrCodeData = 'https://example.com';
 
   return (
-    <div className="row py-20">
+    <div className="row pt-28 pb-20">
       <h2 className="text-white bg-light-blue-500 mb-8 p-4 font-bold cursor-pointer" onClick={toggleOpen}>
         Have a coupon? Click here to enter your code
       </h2>
@@ -52,7 +52,7 @@ const Checkout = () => {
             <Input variant="static" label="Company name (optional)" crossOrigin={undefined} />
           </div>
           <div className="mb-8">
-            <Select variant="static" label="Country / Region *">
+            <Select variant="static" label="Country / Region *" placeholder={''}>
               {CountryRegionData.map(country => <Option key={country[0]}>{country[0]}</Option>)}
             </Select>
           </div>

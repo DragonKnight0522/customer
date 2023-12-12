@@ -2,7 +2,7 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div className="row py-24">
+    <div className="row pt-28 pb-20">
       <h2 className="text-3xl font-bold uppercase mb-2">SHIPPING POLICY</h2>
       <p className="font-semibold mb-4">**IMPORTANT: PACT ACT UPDATE – A MESSAGE TO OUR CUSTOMERS</p>
       <p className="font-semibold mb-4">We’re able to ship your ghost products. We understand there may be some confusion during this time, but we are happy to announce that we are able to ship your products directly to your address.</p>
