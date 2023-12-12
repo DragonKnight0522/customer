@@ -26,16 +26,16 @@ const Pagination = () => {
   };
 
   return (
-    <ButtonGroup variant="outlined" className="justify-center">
-      <IconButton onClick={prev}>
+    <ButtonGroup variant="outlined" className="justify-center" placeholder={''}>
+      <IconButton onClick={prev} placeholder={''}>
         <FontAwesomeIcon icon={faAngleLeft} className="h-4 w-4" />
       </IconButton>
-      <IconButton {...getItemProps(1)}>1</IconButton>
-      <IconButton {...getItemProps(2)}>2</IconButton>
-      <IconButton {...getItemProps(3)}>3</IconButton>
-      <IconButton {...getItemProps(4)}>4</IconButton>
-      <IconButton {...getItemProps(5)}>5</IconButton>
-      <IconButton onClick={next}>
+      <IconButton {...getItemProps(1)} placeholder={''}>1</IconButton>
+      <IconButton {...getItemProps(2)} placeholder={''}>2</IconButton>
+      <IconButton {...getItemProps(3)} placeholder={''}>3</IconButton>
+      <IconButton {...getItemProps(4)} placeholder={''}>4</IconButton>
+      <IconButton {...getItemProps(5)} placeholder={''}>5</IconButton>
+      <IconButton onClick={next} placeholder={''}>
         <FontAwesomeIcon icon={faAngleRight} className="h-4 w-4" />
       </IconButton>
     </ButtonGroup>
