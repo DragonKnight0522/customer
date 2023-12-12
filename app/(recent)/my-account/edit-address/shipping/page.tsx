@@ -22,7 +22,7 @@ const page = () => {
         <Input variant="static" label="Company name (optional)" crossOrigin={undefined} />
       </div>
       <div className="mb-8">
-        <Select variant="static" label="Country / Region *">
+        <Select variant="static" label="Country / Region *" placeholder={''}>
           {CountryRegionData.map(country => <Option key={country[0]}>{country[0]}</Option>)}
         </Select>
       </div>
